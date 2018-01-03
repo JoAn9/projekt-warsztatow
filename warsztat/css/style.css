@@ -62,7 +62,6 @@
     font-size: 22px;
     font-weight: 600;
     color: #666;
-    margin-bottom: 15px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -219,7 +218,6 @@ banner
     color: #24baa0;
     font-weight: 700;
 }
-
 .row {
     margin-left: -13px;
     margin-right: -13px;
@@ -267,9 +265,7 @@ banner
     font-size: 20px;
     font-weight: 500;
     padding: 12px 35px 12px 35px;
-
 }
-
 
 /*ma*/
 
@@ -286,21 +282,13 @@ banner
 .article-box-description {
     position: absolute;
     left: 0;
-    top: 145px;
+    top: 135px;
     width: 100%;
- /*   background: rgba(255,255,255,0.4);
-    padding: 10px;
+  /*  background: rgba(255,255,255,0.4);*/
+    padding-top: 10px;
     height: 55px;
-    transition: 0.5s all;*/
+    transition: 0.5s all;
 }
-.article-box-description.no-image .title {
-    padding-top: 18px;
-
-}
-.article-box-description.no-image .title:before {
-    bottom: 6px;
-}
-
 .article-box .title {
     font-size: 16px;
     padding-bottom: 10px;
@@ -471,7 +459,6 @@ a.price-box .join.join3 {
     border: 2px solid #24baa0;
 }
 
-
 /*mc*/
 .main-contact {
     padding: 36px 0;
@@ -636,8 +623,6 @@ checkbox-cnt .transport {
     margin-top: 110px;
     margin-left: 38px;
 }
-
-
 .application .green_bell {
     background-color: #24baa0;
     width: 200px;
@@ -652,9 +637,7 @@ checkbox-cnt .transport {
     height:195px;
     padding:10px;
     margin-top: 50px;
-
 }
-
 .application .green_button {
     background-color: #27c7ab;
     color: white;
