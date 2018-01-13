@@ -1,25 +1,30 @@
 var article = document.querySelectorAll('.article-box');
-for (var i=0; i<article.length; i++) {
-    article[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.toggle('active');
-    })
+
+function showArticle(e) {
+    e.preventDefault();
+    this.classList.toggle('active');
+}
+function hideArticleTitle(e) {
+    e.preventDefault();
+    var title = this.querySelector('.title');
+    title.style.display = "none";
+}
+
+function showArticleTitle(e) {
+    e.preventDefault();
+    var title = this.querySelector('.title');
+    title.style.display = "block";
 }
 
 for (var i=0; i<article.length; i++) {
-    article[i].addEventListener('mouseover', function (e) {
-        e.preventDefault();
-        var title = this.querySelector('.title');
-        title.style.display = "none";
-    })
+    article[i].addEventListener('click', showArticle);
+}
+for (var i=0; i<article.length; i++) {
+    article[i].addEventListener('mouseover', hideArticleTitle);
 }
 
 for (var i=0; i<article.length; i++) {
-    article[i].addEventListener('mouseout', function (e) {
-        e.preventDefault();
-        var title = this.querySelector('.title');
-        title.style.display = "block";
-    })
+    article[i].addEventListener('mouseout', showArticleTitle);
 }
 
 var previous = document.querySelector('.main-slider-prev');
