@@ -1,4 +1,9 @@
 var article = document.querySelectorAll('.article-box');
+var previous = document.querySelector('.main-slider-prev');
+var next = document.querySelector('.main-slider-next');
+var sliders = document.querySelectorAll('.main-slider-slide');
+var counter = 0;
+
 
 function showArticle(e) {
     e.preventDefault();
@@ -16,6 +21,31 @@ function showArticleTitle(e) {
     title.style.display = "block";
 }
 
+function manageSliderNext() {
+    sliders[counter].classList.remove('active');
+    counter++;
+
+    if(counter === 3) {
+        counter = 0;
+    }
+    sliders[counter].classList.add('active');
+}
+
+function manageSliderPrevious() {
+    sliders[counter].classList.remove('active');
+    counter--;
+
+    if(counter < 0) {
+        counter = 2;
+    }
+    sliders[counter].classList.add('active');
+}
+
+function showList() {
+    var listPanel = this.nextElementSibling;
+    listPanel.classList.toggle('show-list');
+}
+
 for (var i=0; i<article.length; i++) {
     article[i].addEventListener('click', showArticle);
 }
@@ -27,35 +57,13 @@ for (var i=0; i<article.length; i++) {
     article[i].addEventListener('mouseout', showArticleTitle);
 }
 
-var previous = document.querySelector('.main-slider-prev');
-var next = document.querySelector('.main-slider-next');
-var sliders = document.querySelectorAll('.main-slider-slide');
+next.addEventListener('click', manageSliderNext);
 
-var counter = 0;
+previous.addEventListener('click', manageSliderPrevious);
 
-next.addEventListener('click', function () {
 
-    sliders[counter].classList.remove('active');
-    counter++;
-
-    if(counter === 3) {
-        counter = 0;
-    }
-    sliders[counter].classList.add('active');
-});
-
-previous.addEventListener('click', function () {
-    sliders[counter].classList.remove('active');
-    counter--;
-
-    if(counter < 0) {
-        counter = 2;
-    }
-    sliders[counter].classList.add('active');
-});
 
 var buttonOrder = document.querySelector('.green_button');
-console.log(buttonOrder);
 
 buttonOrder.addEventListener('click', function (e) {
     e.preventDefault();
@@ -64,10 +72,5 @@ buttonOrder.addEventListener('click', function (e) {
 var listArrow = document.querySelectorAll('.list_arrow');
 
 for(var i=0;i<listArrow.length;i++) {
-    listArrow[i].addEventListener('click', function() {
-        var listPanel = this.nextElementSibling;
-        listPanel.classList.toggle('show-list');
-    });
-
-
+    listArrow[i].addEventListener('click', showList);
 }
